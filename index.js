@@ -5,9 +5,11 @@ const USER_UUID = '42a4b7d4-50c3-4ef8-a0a6-469711cb3f3e';
 import http from 'node:http';
 import net from 'node:net';
 import dns from 'node:dns';
+import dgram from 'node:dgram';
 import { WebSocketServer } from 'ws';
 
-const log = (...a) => console.log(new Date().toISOString(), ...a);
+const DEBUG = true;  // true = write connection logs (see Render > Logs)
+const log = (...a) => { if (DEBUG) console.log(new Date().toISOString(), ...a); };
 
 // Only for local testing. Leave unset on Render.
 const ALLOW_PRIVATE = process.env.ALLOW_PRIVATE === '1';
@@ -45,6 +47,7 @@ function handleVless(ws, uuid) {
   const uuidBytes = Buffer.from(uuid.replace(/-/g, ''), 'hex');
   let remote = null;
   let udp = false;
+  let udpTarget = null;
   let responseHeader = null;
 
   const closeAll = () => {
@@ -121,8 +124,9 @@ function handleVless(ws, uuid) {
     if (cmd === 1) {
       connectTcp(address, port, payload);
     } else if (cmd === 2 && port === 53) {
-      // UDP is only supported for DNS (sent over DNS-over-HTTPS)
+      // UDP is only supported for DNS (answered by UDP and DNS-over-HTTPS, first answer wins)
       udp = true;
+      udpTarget = { address, port };
       udpData(payload);
     } else {
       throw new Error('unsupported command');
@@ -154,25 +158,89 @@ function handleVless(ws, uuid) {
     sock.on('close', closeAll);
   }
 
-  async function udpData(data) {
+  function udpData(data) {
     let i = 0;
     while (i + 2 <= data.length) {
       const len = data.readUInt16BE(i);
-      const query = data.subarray(i + 2, i + 2 + len);
+      const query = Buffer.from(data.subarray(i + 2, i + 2 + len));
       i += 2 + len;
-      try {
-        const res = await fetch('https://1.1.1.1/dns-query', {
-          method: 'POST',
-          headers: { 'content-type': 'application/dns-message' },
-          body: query,
-        });
-        const answer = Buffer.from(await res.arrayBuffer());
-        const head = Buffer.alloc(2);
-        head.writeUInt16BE(answer.length);
-        sendOut(Buffer.concat([head, answer]));
-      } catch {}
+      resolveDns(query, udpTarget)
+        .then((answer) => {
+          const head = Buffer.alloc(2);
+          head.writeUInt16BE(answer.length);
+          sendOut(Buffer.concat([head, answer]));
+        })
+        .catch((e) => log('dns failed:', e && e.message));
     }
   }
+}
+
+const DOH_URLS = [
+  'https://1.1.1.1/dns-query',
+  'https://cloudflare-dns.com/dns-query',
+  'https://dns.google/dns-query',
+];
+
+// Ask UDP and DNS-over-HTTPS at the same time, use whichever answers first
+function resolveDns(query, target) {
+  const t0 = Date.now();
+  const tries = [
+    dohQuery(query).then((r) => { log('dns ok via doh', Date.now() - t0, 'ms'); return r; }),
+  ];
+  if (target && net.isIP(target.address) && !isBlocked(target.address)) {
+    tries.push(
+      udpQuery(query, target.address, target.port).then((r) => {
+        log('dns ok via udp', Date.now() - t0, 'ms');
+        return r;
+      })
+    );
+  }
+  return Promise.any(tries).catch((agg) => {
+    throw new Error((agg.errors || [agg]).map((e) => e.message).join(' | '));
+  });
+}
+
+async function dohQuery(query) {
+  let lastError;
+  for (const url of DOH_URLS) {
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/dns-message', accept: 'application/dns-message' },
+        body: query,
+        signal: AbortSignal.timeout(4000),
+      });
+      if (!res.ok) throw new Error('status ' + res.status);
+      return Buffer.from(await res.arrayBuffer());
+    } catch (e) {
+      lastError = e;
+      log('doh failed', url, e && (e.cause && e.cause.message ? e.cause.message : e.message));
+    }
+  }
+  throw lastError;
+}
+
+function udpQuery(query, host, port) {
+  return new Promise((resolve, reject) => {
+    const sock = dgram.createSocket(net.isIPv6(host) ? 'udp6' : 'udp4');
+    const timer = setTimeout(() => {
+      try { sock.close(); } catch {}
+      reject(new Error('udp timeout'));
+    }, 3000);
+    sock.once('message', (m) => {
+      clearTimeout(timer);
+      try { sock.close(); } catch {}
+      resolve(m);
+    });
+    sock.once('error', (e) => {
+      clearTimeout(timer);
+      try { sock.close(); } catch {}
+      reject(e);
+    });
+    sock.send(query, port, host, (err) => {
+      if (err) { clearTimeout(timer); try { sock.close(); } catch {} reject(err); }
+    });
+  });
 }
 
 // Do not let clients reach private or internal addresses of the server
