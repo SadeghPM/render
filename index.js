@@ -33,7 +33,16 @@ const server = http.createServer((req, res) => {
 
 const wss = new WebSocketServer({ server });
 server.on('upgrade', (req) => log('ws upgrade', req.url, 'from=' + (req.headers['x-forwarded-for'] || '-'), 'ua=' + (req.headers['user-agent'] || '-')));
-wss.on('connection', (ws) => { log('ws open'); handleVless(ws, getUuid()); });
+wss.on('connection', (ws, req) => {
+  // Debug only: lets you test from a browser that data can come back to you
+  if (DEBUG && req.url && req.url.startsWith('/echo')) {
+    ws.on('message', (d, isBinary) => ws.send(d, { binary: isBinary }));
+    ws.send('echo ready');
+    return;
+  }
+  log('ws open');
+  handleVless(ws, getUuid());
+});
 
 function makeLink(uuid, host) {
   return (
@@ -48,6 +57,8 @@ function handleVless(ws, uuid) {
   let remote = null;
   let udp = false;
   let udpTarget = null;
+  let up = 0; // bytes from client
+  let down = 0; // bytes to client
   let responseHeader = null;
 
   const closeAll = () => {
@@ -56,13 +67,14 @@ function handleVless(ws, uuid) {
   };
 
   const sendOut = (chunk) => {
-    if (ws.readyState !== 1) return;
+    if (ws.readyState !== 1) { log('drop: ws not open, bytes', chunk.length); return; }
+    let out = chunk;
     if (responseHeader) {
-      ws.send(Buffer.concat([responseHeader, chunk]));
+      out = Buffer.concat([responseHeader, chunk]);
       responseHeader = null;
-    } else {
-      ws.send(chunk);
     }
+    down += out.length;
+    ws.send(out, (err) => { if (err) log('ws send error:', err.message); });
   };
 
   ws.on('message', (data, isBinary) => {
@@ -80,14 +92,14 @@ function handleVless(ws, uuid) {
     }
   });
   ws.on('close', () => {
-    log('ws close');
+    log('ws close up=' + up + ' down=' + down);
     try { remote && remote.destroy(); } catch {}
   });
   ws.on('error', closeAll);
 
   function onData(data) {
     // Already connected: just forward data
-    if (remote) { remote.write(data); return; }
+    if (remote) { up += data.length; remote.write(data); return; }
     if (udp) { udpData(data); return; }
 
     // First message: read the VLESS header
@@ -119,7 +131,7 @@ function handleVless(ws, uuid) {
 
     const payload = data.subarray(p);
     responseHeader = Buffer.from([version, 0]);
-    log('vless request', cmd === 1 ? 'tcp' : 'udp', address + ':' + port);
+    log('vless request', cmd === 1 ? 'tcp' : 'udp', address + ':' + port, 'addonLen=' + data[17], 'firstPayload=' + payload.length);
 
     if (cmd === 1) {
       connectTcp(address, port, payload);
@@ -138,9 +150,10 @@ function handleVless(ws, uuid) {
     const sock = net.connect({ host: address, port, lookup: safeLookup });
     remote = sock;
     sock.setNoDelay(true);
-    if (payload.length) sock.write(payload);
+    if (payload.length) { up += payload.length; sock.write(payload); }
 
     sock.on('data', (chunk) => {
+      if (down === 0) log('first data from remote', chunk.length);
       sendOut(chunk);
       // Slow down the remote side if the client cannot keep up
       if (ws.bufferedAmount > 1048576 && !sock.isPaused()) {
@@ -169,6 +182,7 @@ function handleVless(ws, uuid) {
           const head = Buffer.alloc(2);
           head.writeUInt16BE(answer.length);
           sendOut(Buffer.concat([head, answer]));
+          log('dns answer sent', answer.length);
         })
         .catch((e) => log('dns failed:', e && e.message));
     }
