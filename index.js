@@ -1,4 +1,209 @@
 // ===== EDIT THIS LINE: put your UUID between the quotes =====
 const USER_UUID = '42a4b7d4-50c3-4ef8-a0a6-469711cb3f3e';
 // ============================================================
-const a0_0x16e9d5=a0_0x433a;(function(_0x8627f5,_0x5aeb32){const _0x3d79f1=a0_0x433a,_0x4d4e16=_0x8627f5();while(!![]){try{const _0x269e97=parseInt(_0x3d79f1(0x170))/0x1*(parseInt(_0x3d79f1(0x118))/0x2)+-parseInt(_0x3d79f1(0x124))/0x3*(-parseInt(_0x3d79f1(0x112))/0x4)+-parseInt(_0x3d79f1(0x148))/0x5+parseInt(_0x3d79f1(0x129))/0x6+parseInt(_0x3d79f1(0x11a))/0x7+-parseInt(_0x3d79f1(0x149))/0x8+parseInt(_0x3d79f1(0x11f))/0x9;if(_0x269e97===_0x5aeb32)break;else _0x4d4e16['push'](_0x4d4e16['shift']());}catch(_0x18e670){_0x4d4e16['push'](_0x4d4e16['shift']());}}}(a0_0x3a60,0x7b381));import a0_0x20451e from'node:http';import a0_0x3b741e from'node:net';import a0_0x5682fc from'node:dns';import{WebSocketServer}from'ws';const ALLOW_PRIVATE=process.env.ALLOW_PRIVATE==='1',getUuid=()=>(process.env.UUID||USER_UUID)[a0_0x16e9d5(0x12a)](),server=a0_0x20451e[a0_0x16e9d5(0x176)]((_0x245ee2,_0x2ab231)=>{const _0x78d273=a0_0x16e9d5,_0x40a1a5={'lBcQF':_0x78d273(0x165),'RDFpU':function(_0x2295c4,_0x423e76){return _0x2295c4===_0x423e76;},'bpFDL':_0x78d273(0x111),'OeZwU':function(_0x297a6e,_0x3f3de5){return _0x297a6e(_0x3f3de5);},'tISNp':_0x78d273(0x167),'DjydU':function(_0x5802ea,_0x412ad5,_0x2b20a4){return _0x5802ea(_0x412ad5,_0x2b20a4);},'Eshav':function(_0xf5ddad){return _0xf5ddad();},'QFBeM':_0x78d273(0x168)},_0x2b9a58=new URL(_0x245ee2['url'],'http://localhost');_0x2ab231[_0x78d273(0x11c)](0xc8,{'content-type':_0x40a1a5[_0x78d273(0x14a)]});if(_0x40a1a5[_0x78d273(0x144)](_0x2b9a58[_0x78d273(0x115)][_0x78d273(0x14e)](_0x40a1a5[_0x78d273(0x15a)]),getUuid())){const _0x54cb27=_0x40a1a5[_0x78d273(0x150)](String,_0x245ee2[_0x78d273(0x11b)][_0x40a1a5['tISNp']]||_0x245ee2[_0x78d273(0x11b)][_0x78d273(0x14f)]||'')[_0x78d273(0x138)](',')[0x0][_0x78d273(0x179)]();_0x2ab231[_0x78d273(0x116)](_0x40a1a5[_0x78d273(0x114)](makeLink,_0x40a1a5['Eshav'](getUuid),_0x54cb27));return;}_0x2ab231[_0x78d273(0x116)](_0x40a1a5[_0x78d273(0x137)]);}),wss=new WebSocketServer({'server':server});wss['on'](a0_0x16e9d5(0x15f),_0x4f0729=>handleVless(_0x4f0729,getUuid()));function a0_0x433a(_0x2b741d,_0x1b025a){_0x2b741d=_0x2b741d-0x111;const _0x3a60e3=a0_0x3a60();let _0x433a77=_0x3a60e3[_0x2b741d];if(a0_0x433a['EYYoJH']===undefined){var _0x93f262=function(_0x137fa1){const _0xd2327='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x49b152='',_0x2081d='';for(let _0x5c5a68=0x0,_0x465892,_0xd23a5d,_0x42bb93=0x0;_0xd23a5d=_0x137fa1['charAt'](_0x42bb93++);~_0xd23a5d&&(_0x465892=_0x5c5a68%0x4?_0x465892*0x40+_0xd23a5d:_0xd23a5d,_0x5c5a68++%0x4)?_0x49b152+=String['fromCharCode'](0xff&_0x465892>>(-0x2*_0x5c5a68&0x6)):0x0){_0xd23a5d=_0xd2327['indexOf'](_0xd23a5d);}for(let _0x4ac951=0x0,_0x8202c6=_0x49b152['length'];_0x4ac951<_0x8202c6;_0x4ac951++){_0x2081d+='%'+('00'+_0x49b152['charCodeAt'](_0x4ac951)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x2081d);};a0_0x433a['CULyCM']=_0x93f262,a0_0x433a['FYERtz']={},a0_0x433a['EYYoJH']=!![];}const _0x58a790=_0x3a60e3[0x0];a0_0x433a['llVEtP']!==_0x58a790&&(a0_0x433a['FYERtz']={},a0_0x433a['llVEtP']=_0x58a790);const _0x165c81=a0_0x433a['FYERtz'][_0x2b741d];return _0x165c81===undefined?(_0x433a77=a0_0x433a['CULyCM'](_0x433a77),a0_0x433a['FYERtz'][_0x2b741d]=_0x433a77):_0x433a77=_0x165c81,_0x433a77;}function makeLink(_0x3cfd07,_0x327d36){const _0x4af5aa=a0_0x16e9d5;return _0x4af5aa(0x12b)+_0x3cfd07+'@'+_0x327d36+_0x4af5aa(0x159)+('?encryption=none&security=tls&sni='+_0x327d36+_0x4af5aa(0x139))+('&type=ws&host='+_0x327d36+_0x4af5aa(0x13a));}function handleVless(_0x36534c,_0x21382f){const _0x1348a4=a0_0x16e9d5,_0xcddeb9={'xHRkq':_0x1348a4(0x14b),'nXHjU':function(_0x11fd2e,_0x56c762){return _0x11fd2e+_0x56c762;},'fHSLf':function(_0x299e30,_0x58c1ce){return _0x299e30===_0x58c1ce;},'zPNok':function(_0x4a88cc,_0x576447){return _0x4a88cc+_0x576447;},'VeFnj':function(_0x11e8c3,_0x1eab45){return _0x11e8c3<_0x1eab45;},'wVMXQ':function(_0x26bc4b,_0x502f43){return _0x26bc4b+_0x502f43;},'KvYdx':function(_0x302597,_0x101c03){return _0x302597*_0x101c03;},'KUMkM':'bad\x20address\x20type','ehqqt':_0x1348a4(0x153),'dbHEw':function(_0x4c6f90,_0x35706b){return _0x4c6f90(_0x35706b);},'SlLhr':function(_0x1694e0,_0x2395a5){return _0x1694e0>_0x2395a5;},'Syfjz':function(_0x7e0aef,_0x5c5df3){return _0x7e0aef(_0x5c5df3);},'uCzRf':_0x1348a4(0x16a),'xAaXU':_0x1348a4(0x13b),'qlCWf':_0x1348a4(0x15d),'aJADy':function(_0x57fd7c,_0x3d207d){return _0x57fd7c+_0x3d207d;},'LNSjH':function(_0x3630ff,_0x308b94){return _0x3630ff+_0x308b94;},'KexOU':function(_0x1dc7f4,_0x545c25){return _0x1dc7f4+_0x545c25;},'RYXey':_0x1348a4(0x173),'qgBtk':_0x1348a4(0x119)},_0x1f958d=Buffer[_0x1348a4(0x132)](_0x21382f['replace'](/-/g,''),_0xcddeb9[_0x1348a4(0x143)]);let _0x332861=null,_0x438691=![],_0x26adfa=null;const _0x341d2e=()=>{const _0xe662be=_0x1348a4;try{_0x332861&&_0x332861[_0xe662be(0x127)]();}catch{}try{_0x36534c[_0xe662be(0x15d)]();}catch{}},_0xee98c9=_0x5905ad=>{const _0x208472=_0x1348a4;if(_0x36534c[_0x208472(0x141)]!==0x1)return;_0x26adfa?(_0x36534c[_0x208472(0x161)](Buffer['concat']([_0x26adfa,_0x5905ad])),_0x26adfa=null):_0x36534c[_0x208472(0x161)](_0x5905ad);};_0x36534c['on'](_0xcddeb9[_0x1348a4(0x169)],(_0x416c91,_0x41a276)=>{const _0x201638=_0x1348a4;if(_0x41a276===![])return;try{const _0x1f2355=Buffer[_0x201638(0x14c)](_0x416c91)?_0x416c91:Array[_0x201638(0x171)](_0x416c91)?Buffer[_0x201638(0x15c)](_0x416c91):Buffer['from'](_0x416c91);_0x18e118(_0x1f2355);}catch{_0x341d2e();}}),_0x36534c['on'](_0xcddeb9['qlCWf'],()=>{const _0x17a498=_0x1348a4;try{_0x332861&&_0x332861[_0x17a498(0x127)]();}catch{}}),_0x36534c['on'](_0x1348a4(0x13b),_0x341d2e);function _0x18e118(_0x5b3cb2){const _0x29374b=_0x1348a4;if(_0x332861){_0x332861[_0x29374b(0x136)](_0x5b3cb2);return;}if(_0x438691){_0x51746b(_0x5b3cb2);return;}if(_0x5b3cb2[_0x29374b(0x121)]<0x18)throw new Error(_0xcddeb9['xHRkq']);if(!_0x5b3cb2[_0x29374b(0x120)](0x1,0x11)[_0x29374b(0x17b)](_0x1f958d))throw new Error(_0x29374b(0x177));const _0x5c9e69=_0x5b3cb2[0x0];let _0x3213ff=_0xcddeb9[_0x29374b(0x151)](0x12,_0x5b3cb2[0x11]);const _0x17e6c2=_0x5b3cb2[_0x3213ff++],_0x19a844=_0x5b3cb2[_0x29374b(0x172)](_0x3213ff);_0x3213ff+=0x2;const _0x156526=_0x5b3cb2[_0x3213ff++];let _0x249228;if(_0xcddeb9[_0x29374b(0x164)](_0x156526,0x1))_0x249228=Array['from'](_0x5b3cb2[_0x29374b(0x120)](_0x3213ff,_0xcddeb9[_0x29374b(0x151)](_0x3213ff,0x4)))[_0x29374b(0x162)]('.'),_0x3213ff+=0x4;else{if(_0xcddeb9[_0x29374b(0x164)](_0x156526,0x2)){const _0x589087=_0x5b3cb2[_0x3213ff++];_0x249228=_0x5b3cb2[_0x29374b(0x131)]('utf8',_0x3213ff,_0xcddeb9[_0x29374b(0x126)](_0x3213ff,_0x589087)),_0x3213ff+=_0x589087;}else{if(_0x156526===0x3){const _0x56d27d=[];for(let _0x50266a=0x0;_0xcddeb9['VeFnj'](_0x50266a,0x8);_0x50266a++)_0x56d27d[_0x29374b(0x145)](_0x5b3cb2[_0x29374b(0x172)](_0xcddeb9[_0x29374b(0x175)](_0x3213ff,_0xcddeb9[_0x29374b(0x154)](_0x50266a,0x2)))[_0x29374b(0x131)](0x10));_0x249228=_0x56d27d[_0x29374b(0x162)](':'),_0x3213ff+=0x10;}else throw new Error(_0xcddeb9[_0x29374b(0x157)]);}}const _0x5d974f=_0x5b3cb2[_0x29374b(0x120)](_0x3213ff);_0x26adfa=Buffer[_0x29374b(0x132)]([_0x5c9e69,0x0]);if(_0x17e6c2===0x1)_0x29e5ae(_0x249228,_0x19a844,_0x5d974f);else{if(_0x17e6c2===0x2&&_0x19a844===0x35)_0x438691=!![],_0x51746b(_0x5d974f);else throw new Error(_0xcddeb9['ehqqt']);}}function _0x29e5ae(_0x4432bf,_0x30de1f,_0x1d1724){const _0x1ab467=_0x1348a4;if(a0_0x3b741e[_0x1ab467(0x133)](_0x4432bf)&&_0xcddeb9[_0x1ab467(0x16e)](isBlocked,_0x4432bf))throw new Error('blocked\x20address');const _0x3f1088=a0_0x3b741e[_0x1ab467(0x158)]({'host':_0x4432bf,'port':_0x30de1f,'lookup':safeLookup});_0x332861=_0x3f1088,_0x3f1088[_0x1ab467(0x125)](!![]);if(_0x1d1724[_0x1ab467(0x121)])_0x3f1088[_0x1ab467(0x136)](_0x1d1724);_0x3f1088['on'](_0xcddeb9[_0x1ab467(0x130)],_0x2db4fe=>{const _0x1676f2=_0x1ab467,_0x4c543c={'zeJiQ':function(_0x1e3339,_0x50675c){return _0x1e3339!==_0x50675c;},'tRJqu':function(_0x3f17d0,_0x5c0263){return _0x3f17d0<_0x5c0263;},'PEybG':function(_0x17649c,_0x3afcbd){return _0xcddeb9['dbHEw'](_0x17649c,_0x3afcbd);}};_0xee98c9(_0x2db4fe);if(_0xcddeb9[_0x1676f2(0x178)](_0x36534c['bufferedAmount'],0x100000)&&!_0x3f1088[_0x1676f2(0x156)]()){_0x3f1088[_0x1676f2(0x11e)]();const _0x455812=setInterval(()=>{const _0x2c042=_0x1676f2;(_0x4c543c[_0x2c042(0x122)](_0x36534c[_0x2c042(0x141)],0x1)||_0x4c543c[_0x2c042(0x160)](_0x36534c[_0x2c042(0x174)],0x40000))&&(_0x4c543c[_0x2c042(0x117)](clearInterval,_0x455812),_0x3f1088[_0x2c042(0x17d)]());},0x19);}}),_0x3f1088['on'](_0xcddeb9[_0x1ab467(0x15b)],_0x341d2e),_0x3f1088['on'](_0xcddeb9[_0x1ab467(0x166)],_0x341d2e);}async function _0x51746b(_0x54750a){const _0x378202=_0x1348a4;let _0x206ca4=0x0;while(_0xcddeb9[_0x378202(0x12f)](_0x206ca4,0x2)<=_0x54750a['length']){const _0x1721cd=_0x54750a[_0x378202(0x172)](_0x206ca4),_0xcd3a67=_0x54750a[_0x378202(0x120)](_0xcddeb9[_0x378202(0x17a)](_0x206ca4,0x2),_0xcddeb9['KexOU'](_0x206ca4,0x2)+_0x1721cd);_0x206ca4+=_0xcddeb9['aJADy'](0x2,_0x1721cd);try{const _0x38fc7d=await fetch(_0x378202(0x16b),{'method':_0x378202(0x134),'headers':{'content-type':'application/dns-message'},'body':_0xcd3a67}),_0x2a1acc=Buffer[_0x378202(0x132)](await _0x38fc7d[_0x378202(0x12d)]()),_0x36d99b=Buffer[_0x378202(0x13e)](0x2);_0x36d99b[_0x378202(0x163)](_0x2a1acc[_0x378202(0x121)]),_0xee98c9(Buffer['concat']([_0x36d99b,_0x2a1acc]));}catch{}}}}function a0_0x3a60(){const _0x4dd317=['CMvHzhLtDgf0zq','zMvI','uLLyzxK','uKrgCfu','ChvZAa','Cg5Nu20','zMu5','ndK5nJuYmgPAwMDxrW','mtG0odC2oezdB1fktW','BejJuuy','AgvHzgvYihrVBYbZAg9YDa','AxncDwzMzxi','vwPVrwW','z2v0','Ag9ZDa','t2vAD1u','BLHiALu','C2XPy2u','Dw5ZDxbWB3j0zwqGy29TBwfUza','s3zzzhG','ywzfzgu','AxnqyxvZzwq','s1vnA00','y29UBMvJDa','oJq0mW','yNbgreW','EefHwfu','y29Uy2f0','y2XVC2u','ywrKCMvZCW','y29UBMvJDgLVBG','DfjkCxu','C2vUza','AM9PBG','D3jPDgvvsw50mtzcrq','zKHttgy','Dgv4Dc9WBgfPBJSGy2HHCNnLDd11DgyToa','CwXdv2y','Ec1MB3j3yxjKzwqTAg9ZDa','sgvSBg8GD29YBgq','CwDcDgS','zgf0yq','Ahr0Chm6lY8XlJeUms4Xl2rUCY1XDwvYEq','Bg9VA3vW','oJPMzMzMoG','u3LMANO','BwfW','otaZmdf2u2n5DLe','AxnbCNjHEq','CMvHzfvjBNqXnKjf','Agv4','yNvMzMvYzwrbBw91BNq','D1znwfe','y3jLyxrLu2vYDMvY','D3jVBMCGDxvPza','u2XmAhi','DhjPBq','te5tAKG','zxf1ywXZ','yMjQC0i','CMvZDw1L','A2v5','ogv4DNLAza','BgLZDgvU','rgP5zfu','C2vHCMnOugfYyw1Z','zw5K','uev5yKC','mMPcDNPOyW','BwvZC2fNzq','mtCYmdeYnfzzvNnZDa','AgvHzgvYCW','D3jPDgvizwfK','C3rHCNrZv2L0Aa','Cgf1C2u','ntmZnteXovvtEvDbrG','C3vIyxjYyxK','BgvUz3rO','EMvkAve','rwrhv0e','ntm0mdLlzgrwzKe','C2v0tM9ezwXHEq','ELboB2S','zgvZDhjVEq','wMzSvMy','ndyYnda1mfbMDKvTwa','Dg9mB3DLCKnHC2u','DMXLC3m6lY8','oJOX','yxjYyxLcDwzMzxi','ELDzrMe','yuPbrhK','Dun6uMy','Dg9tDhjPBMC','zNjVBq','Axnjua','ue9tva','uvbQyKG','D3jPDgu','uuzczu0','C3bSAxq','jMzWpwnOCM9Tzq','jNbHDgG9jtjgD3mJCMvUzgvY','zxjYB3i','Axnjuhy0','zfv1ALO','ywXSB2m','C29Tzq','vM9wB24'];a0_0x3a60=function(){return _0x4dd317;};return a0_0x3a60();}function safeLookup(_0x40e39c,_0x9647f2,_0x50da20){const _0x206770=a0_0x16e9d5,_0x26f76d={'zWYFa':function(_0x246350,_0x384dc9){return _0x246350(_0x384dc9);},'ZflVf':function(_0x34b611,_0x3b62cf,_0x5899d1,_0x25383a){return _0x34b611(_0x3b62cf,_0x5899d1,_0x25383a);}};a0_0x5682fc[_0x206770(0x16c)](_0x40e39c,_0x9647f2,(_0xcbd734,_0x4619bc,_0x199bcb)=>{const _0x2392ab=_0x206770;if(_0xcbd734)return _0x26f76d[_0x2392ab(0x12e)](_0x50da20,_0xcbd734);const _0x38bc31=Array[_0x2392ab(0x171)](_0x4619bc)?_0x4619bc[_0x2392ab(0x16f)](_0x4aeccb=>_0x4aeccb[_0x2392ab(0x15e)]):[_0x4619bc];if(_0x38bc31[_0x2392ab(0x13f)](isBlocked))return _0x50da20(new Error('blocked\x20address'));_0x26f76d[_0x2392ab(0x128)](_0x50da20,null,_0x4619bc,_0x199bcb);});}function isBlocked(_0x239ca7){const _0x17512a=a0_0x16e9d5,_0x41573e={'VoVon':_0x17512a(0x16d),'pngSm':function(_0x1ef30a,_0x2ba86e){return _0x1ef30a===_0x2ba86e;},'afEde':function(_0xd85bee,_0x447b5a){return _0xd85bee===_0x447b5a;},'QPjbH':function(_0x146701,_0x418337){return _0x146701===_0x418337;},'bbjsB':function(_0x180657,_0x375243){return _0x180657>=_0x375243;},'dUujZ':function(_0x3069be,_0x51057d){return _0x3069be===_0x51057d;},'EdGWA':function(_0x7bdb0b,_0x2a3f0a){return _0x7bdb0b===_0x2a3f0a;},'UjoEl':_0x17512a(0x12c),'XfLoj':'fe8'};if(ALLOW_PRIVATE)return![];if(_0x239ca7[_0x17512a(0x11d)](_0x41573e[_0x17512a(0x140)]))_0x239ca7=_0x239ca7[_0x17512a(0x152)](0x7);if(a0_0x3b741e[_0x17512a(0x13c)](_0x239ca7)){const [_0x21cf8e,_0x3eaaed]=_0x239ca7[_0x17512a(0x138)]('.')[_0x17512a(0x16f)](Number);return _0x21cf8e===0x0||_0x21cf8e===0xa||_0x41573e[_0x17512a(0x146)](_0x21cf8e,0x7f)||_0x21cf8e===0x64&&_0x3eaaed>=0x40&&_0x3eaaed<=0x7f||_0x41573e[_0x17512a(0x155)](_0x21cf8e,0xa9)&&_0x41573e[_0x17512a(0x135)](_0x3eaaed,0xfe)||_0x21cf8e===0xac&&_0x41573e[_0x17512a(0x17c)](_0x3eaaed,0x10)&&_0x3eaaed<=0x1f||_0x41573e[_0x17512a(0x13d)](_0x21cf8e,0xc0)&&_0x3eaaed===0xa8;}const _0x5616ba=_0x239ca7[_0x17512a(0x12a)]();return _0x41573e[_0x17512a(0x123)](_0x5616ba,'::')||_0x5616ba===_0x41573e[_0x17512a(0x14d)]||_0x5616ba[_0x17512a(0x11d)]('fc')||_0x5616ba[_0x17512a(0x11d)]('fd')||_0x5616ba[_0x17512a(0x11d)](_0x41573e['XfLoj'])||_0x5616ba[_0x17512a(0x11d)](_0x17512a(0x147))||_0x5616ba[_0x17512a(0x11d)]('fea')||_0x5616ba[_0x17512a(0x11d)](_0x17512a(0x142));}server[a0_0x16e9d5(0x113)](Number(process.env.PORT)||0x2710,'0.0.0.0');
+// VLESS over WebSocket + TLS on Render (Node.js web service).
+import http from 'node:http';
+import net from 'node:net';
+import dns from 'node:dns';
+import { WebSocketServer } from 'ws';
+
+const log = (...a) => console.log(new Date().toISOString(), ...a);
+
+// Only for local testing. Leave unset on Render.
+const ALLOW_PRIVATE = process.env.ALLOW_PRIVATE === '1';
+
+const getUuid = () => (process.env.UUID || USER_UUID).toLowerCase();
+
+const server = http.createServer((req, res) => {
+  const url = new URL(req.url, 'http://localhost');
+  res.writeHead(200, { 'content-type': 'text/plain; charset=utf-8' });
+
+  // Secret page: open https://YOUR-SITE.onrender.com/?key=YOUR-UUID to get the link text
+  if (url.searchParams.get('key') === getUuid()) {
+    const host = String(req.headers['x-forwarded-host'] || req.headers.host || '')
+      .split(',')[0]
+      .trim();
+    res.end(makeLink(getUuid(), host));
+    return;
+  }
+  res.end('Hello world');
+});
+
+const wss = new WebSocketServer({ server });
+server.on('upgrade', (req) => log('ws upgrade', req.url, 'from=' + (req.headers['x-forwarded-for'] || '-'), 'ua=' + (req.headers['user-agent'] || '-')));
+wss.on('connection', (ws) => { log('ws open'); handleVless(ws, getUuid()); });
+
+function makeLink(uuid, host) {
+  return (
+    `vless://${uuid}@${host}:443` +
+    `?encryption=none&security=tls&sni=${host}&fp=chrome` +
+    `&type=ws&host=${host}&path=%2Fws#render`
+  );
+}
+
+function handleVless(ws, uuid) {
+  const uuidBytes = Buffer.from(uuid.replace(/-/g, ''), 'hex');
+  let remote = null;
+  let udp = false;
+  let responseHeader = null;
+
+  const closeAll = () => {
+    try { remote && remote.destroy(); } catch {}
+    try { ws.close(); } catch {}
+  };
+
+  const sendOut = (chunk) => {
+    if (ws.readyState !== 1) return;
+    if (responseHeader) {
+      ws.send(Buffer.concat([responseHeader, chunk]));
+      responseHeader = null;
+    } else {
+      ws.send(chunk);
+    }
+  };
+
+  ws.on('message', (data, isBinary) => {
+    if (isBinary === false) return;
+    try {
+      const buf = Buffer.isBuffer(data)
+        ? data
+        : Array.isArray(data)
+          ? Buffer.concat(data)
+          : Buffer.from(data);
+      onData(buf);
+    } catch (e) {
+      log('message error:', e.message);
+      closeAll();
+    }
+  });
+  ws.on('close', () => {
+    log('ws close');
+    try { remote && remote.destroy(); } catch {}
+  });
+  ws.on('error', closeAll);
+
+  function onData(data) {
+    // Already connected: just forward data
+    if (remote) { remote.write(data); return; }
+    if (udp) { udpData(data); return; }
+
+    // First message: read the VLESS header
+    if (data.length < 24) throw new Error('header too short');
+    if (!data.subarray(1, 17).equals(uuidBytes)) throw new Error('wrong uuid');
+    const version = data[0];
+    let p = 18 + data[17];
+    const cmd = data[p++]; // 1 = TCP, 2 = UDP
+    const port = data.readUInt16BE(p);
+    p += 2;
+    const atype = data[p++];
+
+    let address;
+    if (atype === 1) {
+      address = Array.from(data.subarray(p, p + 4)).join('.');
+      p += 4;
+    } else if (atype === 2) {
+      const len = data[p++];
+      address = data.toString('utf8', p, p + len);
+      p += len;
+    } else if (atype === 3) {
+      const groups = [];
+      for (let i = 0; i < 8; i++) groups.push(data.readUInt16BE(p + i * 2).toString(16));
+      address = groups.join(':');
+      p += 16;
+    } else {
+      throw new Error('bad address type');
+    }
+
+    const payload = data.subarray(p);
+    responseHeader = Buffer.from([version, 0]);
+    log('vless request', cmd === 1 ? 'tcp' : 'udp', address + ':' + port);
+
+    if (cmd === 1) {
+      connectTcp(address, port, payload);
+    } else if (cmd === 2 && port === 53) {
+      // UDP is only supported for DNS (sent over DNS-over-HTTPS)
+      udp = true;
+      udpData(payload);
+    } else {
+      throw new Error('unsupported command');
+    }
+  }
+
+  function connectTcp(address, port, payload) {
+    if (net.isIP(address) && isBlocked(address)) throw new Error('blocked address');
+    const sock = net.connect({ host: address, port, lookup: safeLookup });
+    remote = sock;
+    sock.setNoDelay(true);
+    if (payload.length) sock.write(payload);
+
+    sock.on('data', (chunk) => {
+      sendOut(chunk);
+      // Slow down the remote side if the client cannot keep up
+      if (ws.bufferedAmount > 1048576 && !sock.isPaused()) {
+        sock.pause();
+        const timer = setInterval(() => {
+          if (ws.readyState !== 1 || ws.bufferedAmount < 262144) {
+            clearInterval(timer);
+            sock.resume();
+          }
+        }, 25);
+      }
+    });
+    sock.on('connect', () => log('remote connected', address + ':' + port));
+    sock.on('error', (e) => { log('remote error', address + ':' + port, e.message); closeAll(); });
+    sock.on('close', closeAll);
+  }
+
+  async function udpData(data) {
+    let i = 0;
+    while (i + 2 <= data.length) {
+      const len = data.readUInt16BE(i);
+      const query = data.subarray(i + 2, i + 2 + len);
+      i += 2 + len;
+      try {
+        const res = await fetch('https://1.1.1.1/dns-query', {
+          method: 'POST',
+          headers: { 'content-type': 'application/dns-message' },
+          body: query,
+        });
+        const answer = Buffer.from(await res.arrayBuffer());
+        const head = Buffer.alloc(2);
+        head.writeUInt16BE(answer.length);
+        sendOut(Buffer.concat([head, answer]));
+      } catch {}
+    }
+  }
+}
+
+// Do not let clients reach private or internal addresses of the server
+function safeLookup(hostname, options, cb) {
+  dns.lookup(hostname, options, (err, address, family) => {
+    if (err) return cb(err);
+    const list = Array.isArray(address) ? address.map((a) => a.address) : [address];
+    if (list.some(isBlocked)) return cb(new Error('blocked address'));
+    cb(null, address, family);
+  });
+}
+
+function isBlocked(ip) {
+  if (ALLOW_PRIVATE) return false;
+  if (ip.startsWith('::ffff:')) ip = ip.slice(7);
+  if (net.isIPv4(ip)) {
+    const [a, b] = ip.split('.').map(Number);
+    return (
+      a === 0 || a === 10 || a === 127 ||
+      (a === 100 && b >= 64 && b <= 127) ||
+      (a === 169 && b === 254) ||
+      (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && b === 168)
+    );
+  }
+  const x = ip.toLowerCase();
+  return (
+    x === '::' || x === '::1' ||
+    x.startsWith('fc') || x.startsWith('fd') ||
+    x.startsWith('fe8') || x.startsWith('fe9') || x.startsWith('fea') || x.startsWith('feb')
+  );
+}
+
+server.listen(Number(process.env.PORT) || 10000, '0.0.0.0', () => log('server listening'));
